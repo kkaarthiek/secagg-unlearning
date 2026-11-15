@@ -3,7 +3,7 @@
 How much extra work do clients have to do to remove one client, for example a backdoor attacker, from a
 federated model when **secure aggregation** means the server only ever kept the *sum* of each round's updates?
 
-This is the code for our course project (final report: *Federated Unlearning Without Per-Client History: How Much Client Work Does Removal Actually Need?*).
+This is the code for our course project. The final report is [`report.pdf`](report.pdf): *Federated Unlearning Without Per-Client History: How Much Client Work Does Removal Actually Need?*
 Team: Singamsetti Komal Sandeep, Uddisa Kkaartthiek, Shaurya Varshney, Sankul Rahate. Guide: Haroon Lone (IISER Bhopal).
 
 ## Summary
@@ -51,6 +51,7 @@ secunlearn/    the solution: data, training with a stored history, recovery, unl
 main/          scripts that reproduce the experiments of the final report (Experiments 1-6) and its figures
 ablation/      extra experiments and checks, not needed to reproduce the report
 results/       csv tables of our runs (results/main, results/ablation)
+report.pdf     the final report
 figures/       the report's figures (cost, quality, share) and a cost-quality plot
 tests/         fast checks on synthetic data (no download, no GPU)
 ```
