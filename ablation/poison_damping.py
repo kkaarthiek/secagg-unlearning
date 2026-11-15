@@ -11,7 +11,7 @@ Result: a full correction removes the backdoor and ruins accuracy; a tenth of it
 well down at a cost of a few points of accuracy. This is the observation behind the final report's
 share lambda (exp1_share_to_subtract.py), which repeats it at 100 clients and 400 rounds.
 
-    python experiments/ablation/poison_damping.py [--lengths 10 50 100]
+    python ablation/poison_damping.py [--lengths 10 50 100]
 """
 import argparse
 import sys
@@ -19,7 +19,7 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import setup as cli
 from secunlearn.attack import ATTACKER, POISON, attack_success, attacker_view
 from secunlearn.model import evaluate

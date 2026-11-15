@@ -17,7 +17,7 @@ hindsight (which needs the retrained model).
 Score of a model against the retrained one (lower is better):
     max(0, attack - attack_retrained - 0.02) + max(0, accuracy_retrained - accuracy - 0.01)
 
-    python experiments/main/analyze_share_rule.py
+    python main/analyze_share_rule.py
 """
 
 import csv
@@ -26,7 +26,7 @@ import statistics as st
 from collections import defaultdict
 from pathlib import Path
 
-RESULTS = Path(__file__).resolve().parents[2] / "results" / "main" / "exp1_share"
+RESULTS = Path(__file__).resolve().parents[1] / "results" / "main" / "exp1_share"
 KAPPAS = [round(0.02 * i, 2) for i in range(1, 100)]      # 0.02 .. 1.98
 FIXED = [0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.75, 1.0]
 

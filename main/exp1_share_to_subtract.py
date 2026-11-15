@@ -13,14 +13,14 @@ Experiment 1 is tags j10, f0, f4 on CIFAR-10. Experiment 5 is all six tags on CI
 FEMNIST settings (see exp4_femnist.py). The rule lambda = min(1, kappa/rho) is tested offline by
 analyze_share_rule.py. Client work of the recovery is rounds_joined * (m-1): 90, ~372, ~1185.
 
-    python experiments/main/exp1_share_to_subtract.py --tags j10 f0 f4
+    python main/exp1_share_to_subtract.py --tags j10 f0 f4
 """
 import sys
 from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import setup as cli
 from secunlearn.attack import ATTACKER, attack_success
 from secunlearn.baselines import fedrecovery_weights

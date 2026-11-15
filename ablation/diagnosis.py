@@ -11,14 +11,14 @@ both with exact updates (a full redo):
 
 This is what led to the share lambda of the final report.
 
-    python experiments/ablation/diagnosis.py [--rounds 1000]
+    python ablation/diagnosis.py [--rounds 1000]
 """
 import sys
 from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import plots
 from secunlearn import setup as cli
 from secunlearn.settings import REMOVE_CLIENTS, benign_runs

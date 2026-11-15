@@ -16,14 +16,14 @@ example (N = 200) states k = 60; the printed inequalities give k = 41, so our cl
 smaller than the paper's own code would give. Each round a cluster uses the same share of its
 clients as the single model does (our choice).
 
-    python experiments/main/exp3_clusters.py --tags j10 f0 f4
-    python experiments/main/exp3_clusters.py --tags f0 f4 --dataset femnist     # Experiment 4
+    python main/exp3_clusters.py --tags j10 f0 f4
+    python main/exp3_clusters.py --tags f0 f4 --dataset femnist     # Experiment 4
 """
 import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import setup as cli
 from secunlearn.attack import ATTACKER
 from secunlearn.baselines import make_clusters, pargen, train_groups_and_remove

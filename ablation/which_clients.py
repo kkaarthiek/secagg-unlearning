@@ -14,7 +14,7 @@ of rounds are corrected: only k's latest 10%, and all of them. `drop_s*.csv` (--
 except one helper, for each helper in turn, to test whether a helper that shared many rounds matters
 more.
 
-    python experiments/ablation/which_clients.py [--rounds 1000] [--drop]
+    python ablation/which_clients.py [--rounds 1000] [--drop]
 """
 import argparse
 import sys
@@ -22,7 +22,7 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import plots
 from secunlearn import setup as cli
 from secunlearn.helpers import collect_helper_updates, rank_helpers, score_helpers, shared_rounds, split_evenly

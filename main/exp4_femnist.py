@@ -4,14 +4,14 @@ Runs experiments 2, 3 and 1 with --dataset femnist for the two attackers of the 
 any other client: about 41 rounds; also put into every fourth round: about 132). FEMNIST clients
 hold 300 images, so --per-client is set to 300 automatically.
 
-    python experiments/main/exp4_femnist.py
-    python experiments/main/exp4_femnist.py --smoke --dataset synthetic   # quick check, no download
+    python main/exp4_femnist.py
+    python main/exp4_femnist.py --smoke --dataset synthetic   # quick check, no download
 """
 import sys
 from dataclasses import replace
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import setup as cli
 import exp1_share_to_subtract as exp1
 import exp2_client_budget as exp2

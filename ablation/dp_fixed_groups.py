@@ -6,12 +6,12 @@ every prediction, and removing the attacker retrains its group without it (see s
 for what is ours). Each round a group uses the same share of its clients as the single model: 1, 2 or
 5 clients for groups of 10, 20 or 50. Results go to results/ablation/dp_fixed_groups/.
 
-    python experiments/ablation/dp_fixed_groups.py --tags j10 f0 f4
+    python ablation/dp_fixed_groups.py --tags j10 f0 f4
 """
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import setup as cli
 from secunlearn.attack import ATTACKER
 from secunlearn.baselines import make_groups, train_groups_and_remove

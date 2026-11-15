@@ -13,7 +13,7 @@ removed_client_loss (the removal check) with quality on.
 Mid-term result: no rule beat a guess of zero, and "distance to one retrained model" cannot judge
 unlearning (see control.py). Use --rounds 1000 for the long setting.
 
-    python experiments/ablation/round_selection.py [--rounds 1000] [--no-quality]
+    python ablation/round_selection.py [--rounds 1000] [--no-quality]
 """
 import argparse
 import sys
@@ -21,7 +21,7 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import plots
 from secunlearn import setup as cli
 from secunlearn.rounds import RULES, SELECTORS, budget_from_fraction, estimate_all, pick_rounds

@@ -6,12 +6,12 @@ that subtraction returns noise. On a few rounds we check that (a) when everyone 
 total equals the stored one exactly, and (b) when all but one client redo it, stored minus redone equals
 that client's real update exactly. Every other script runs this check before it uses a run.
 
-    python experiments/ablation/replay_check.py
+    python ablation/replay_check.py
 """
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import setup as cli
 from secunlearn.attack import ATTACKER
 from secunlearn.settings import attacker_config

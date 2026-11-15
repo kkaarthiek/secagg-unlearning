@@ -8,12 +8,12 @@ under secure aggregation; see secunlearn/baselines.py for how it is reimplemente
 The other published method, Dynamic Participation, is in exp3_clusters.py (with the clustering of
 its own paper). Its fixed group sizes of 10, 20 and 50 are in ablation/dp_fixed_groups.py.
 
-    python experiments/main/exp3_baselines.py --tags j10 f0 f4
+    python main/exp3_baselines.py --tags j10 f0 f4
 """
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import setup as cli
 from secunlearn.attack import ATTACKER, attack_success
 from secunlearn.baselines import fedrecovery

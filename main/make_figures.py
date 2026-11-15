@@ -4,7 +4,7 @@
   fig_quality.pdf  attack success and accuracy of each method, on CIFAR-10 and FEMNIST
   fig_share.pdf    the best share of the attacker's contribution to subtract, in 8 settings
 
-    python experiments/main/make_figures.py        # writes figures/
+    python main/make_figures.py        # writes figures/
 """
 import csv
 import glob
@@ -19,7 +19,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
+ROOT = HERE.parent
 RESULTS = ROOT / "results" / "main"
 OUT_HERE = ROOT / "figures"
 sys.path.insert(0, str(HERE))

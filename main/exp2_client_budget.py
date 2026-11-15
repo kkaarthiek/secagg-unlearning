@@ -21,14 +21,14 @@ BUDGETS-LAMBDAS and we measure attack success and clean accuracy.
 (Each helper's own update is computed for analysis only; every rule uses only the sum of the
 helpers paid in a round, which is what the server would see. See secunlearn/helpers.py.)
 
-    python experiments/main/exp2_client_budget.py --tags f0 f4
+    python main/exp2_client_budget.py --tags f0 f4
 """
 import sys
 from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import setup as cli
 from secunlearn.attack import ATTACKER, attack_success
 from secunlearn.helpers import collect_helper_updates, rank_helpers, score_helpers, shared_rounds, split_evenly

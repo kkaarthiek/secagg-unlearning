@@ -12,14 +12,14 @@ models are. The same models also give the removal check (loss on the removed cli
 accuracy) for A and B. Result: two correct retrainings are 1.6 to 1.8 times further apart than the
 trained and retrained models.
 
-    python experiments/ablation/control.py [--rounds 1000]
+    python ablation/control.py [--rounds 1000]
 """
 import sys
 from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import setup as cli
 from secunlearn.settings import REMOVE_CLIENTS, benign_config, benign_runs
 from secunlearn.training import History, train_federation

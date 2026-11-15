@@ -7,7 +7,7 @@ the share m/N held fixed. If the guess is right the lines of the third panel lan
 
 Clients hold 200 images here (200 clients x 400 would not fit in CIFAR-10). One removed client (0).
 
-    python experiments/ablation/scaling.py
+    python ablation/scaling.py
 """
 import argparse
 import sys
@@ -16,7 +16,7 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from secunlearn import plots
 from secunlearn import setup as cli
 from secunlearn.settings import benign_config
