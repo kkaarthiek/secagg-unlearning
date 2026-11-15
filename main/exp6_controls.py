@@ -1,4 +1,4 @@
-"""Controls: does the attacker's recovered update matter, or would any damped correction do?
+"""Experiment 6, controls: does the attacker's recovered update matter, or would any damped correction do?
 
 For each attacker run we apply, to the same trained model and in the same rounds, corrections that
 do NOT use the attacker's update, and compare them with the exact one (all at the same shares):
@@ -15,7 +15,7 @@ do NOT use the attacker's update, and compare them with the exact one (all at th
   rollback_retrain  go back to the model before the attacker's first round and retrain: cost only
                  (its quality is the retrained model's, since the model before that round is clean)
 
-    python ablation/controls.py --tags f0 f4
+    python main/exp6_controls.py --tags f0 f4
 """
 import sys
 from pathlib import Path
@@ -134,7 +134,7 @@ def summarize(out, dataset):
 
 def main():
     setup, args = cli.parse(__doc__, TAGS, ["f0", "f4"])
-    out = setup.results("ablation", "controls")
+    out = setup.results("main", "exp6_controls")
     for tag in args.tags:
         for seed in setup.seeds:
             run_one(setup, tag, seed, out)

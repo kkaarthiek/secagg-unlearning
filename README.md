@@ -22,7 +22,7 @@ Cost is counted in **client-rounds**: one client redoing one past round is one u
 
 ```
 secunlearn/    the solution: data, training with a stored history, recovery, unlearning, baselines
-main/          scripts that reproduce the experiments reported in the final report (Experiments 1-5)
+main/          scripts that reproduce the experiments reported in the final report (Experiments 1-6)
 ablation/      extra experiments and checks, not needed to reproduce the report
 results/       csv tables of our runs (results/main, results/ablation)
 figures/       the report's three figures
@@ -54,12 +54,14 @@ attacker; three attackers (tags): `j10` joins 10 rounds then leaves, `f0` is pic
 | Exp 3: two published methods | `main/exp3_baselines.py` (FedRecovery) and `main/exp3_clusters.py` (Dynamic Participation, clusters of its own paper) | our reimplementations, same attackers | `results/main/exp3_baselines/`, `exp3_clusters/` |
 | Exp 4: FEMNIST | `main/exp4_femnist.py` | experiments 1-3 on FEMNIST (one client per writer) | `results/main/exp4_femnist/` (+ `lambda_femnist_*` in `exp1_share/`, `clusters_femnist_*` in `exp3_clusters/`) |
 | Exp 5: choosing the share | `main/exp1_share_to_subtract.py` (all 6 tags + FEMNIST) then `main/analyze_share_rule.py` | `rho` and the rule `lambda = min(1, kappa/rho)`, tested leave-one-setting-out | `results/main/exp1_share/` |
-| Figures | `main/make_figures.py` | `fig_cost`, `fig_quality`, `fig_share` | `figures/` |
+| Exp 6: controls (is the recovered update what matters?) | `main/exp6_controls.py` | rollback with no client work, random / honest-client corrections, noisy and wrong redoes, train on, repair, rollback-and-retrain cost | `results/main/exp6_controls/` |
+| Figures | `main/make_figures.py`, `main/make_pareto.py` | `fig_cost`, `fig_quality`, `fig_share`; `fig_pareto` (appendix) | `figures/` |
 
 Findings (from the report): redoing the attacker's rounds costs 2%, 9% or 31% of retraining; a share of
 about 15% is a usable default but not a full removal; FedRecovery removes almost nothing here; Dynamic
 Participation is more accurate on FEMNIST and cheaper when the attacker took part in many rounds; paying
-fewer clients saves little work.
+fewer clients saves little work. Controls (Exp 6): a zero-cost rollback of the attacker's rounds removes the backdoor almost as well as the exact
+recovered update, which keeps 2 to 12 points more accuracy; random and honest-client corrections do nothing.
 
 ## Extra experiments (`ablation/`)
 
@@ -90,6 +92,8 @@ python main/exp3_baselines.py
 python main/exp3_clusters.py
 python main/exp4_femnist.py
 python main/make_figures.py
+python main/exp6_controls.py --tags f0 f4
+python main/make_pareto.py
 ```
 
 Every script takes `--seeds`, `--rounds`, `--clients`, `--per-round`, `--per-client`, `--smoke` and
