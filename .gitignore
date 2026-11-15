@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.DS_Store
+
+# Model histories are gigabytes; a seed rebuilds them. Datasets are downloaded on first use.
+runs/
+data/
+# tiny --smoke runs
+results/smoke/

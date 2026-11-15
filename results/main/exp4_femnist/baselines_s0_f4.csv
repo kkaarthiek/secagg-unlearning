@@ -1,0 +1,16 @@
+seed,force,active_rounds,method,setting,rounds_joined,client_rounds,attack_success,test_accuracy,relative_error
+0,4,,single model,trained,131,0,0.9717465753424658,0.683,1.0
+0,4,,single model,retrained,131,3869,0.0029965753424657533,0.6827,0.0
+0,4,,FedRecovery,noise 0,131,0,0.9605094178082192,0.6846,0.9991998363583271
+0,4,,FedRecovery,noise 0.01,131,0,0.9602953767123288,0.6841,0.999593631223792
+0,4,,FedRecovery,noise 0.03,131,0,0.9613655821917808,0.6846,1.0023215477629583
+0,4,,FedRecovery,noise 0.1,131,0,0.9619006849315068,0.6828,1.036262325583497
+0,4,,Dynamic Participation,group 10: before,114,0,0.008347602561116219,0.6829999685287476,
+0,4,,Dynamic Participation,group 10: after,114,286,0.00492294505238533,0.6841999888420105,
+0,4,,Dynamic Participation,group 10: attacker's group model alone,114,0,0.9997859589041096,0.5575,
+0,4,,Dynamic Participation,group 20: before,128,0,0.011665239930152893,0.6959999799728394,
+0,4,,Dynamic Participation,group 20: after,128,672,0.0036386987194418907,0.6973999738693237,
+0,4,,Dynamic Participation,group 20: attacker's group model alone,128,0,0.9938998287671232,0.6328,
+0,4,,Dynamic Participation,group 50: before,123,0,0.865368127822876,0.6938999891281128,
+0,4,,Dynamic Participation,group 50: after,123,1877,0.004066780675202608,0.6894999742507935,
+0,4,,Dynamic Participation,group 50: attacker's group model alone,123,0,0.9702482876712328,0.6831,
